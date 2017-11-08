@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Array.some()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p>Hello, world!</p>
+
+
+		<!-- Scripts -->
+		<script>
+			var some1 = [12, 25, 42, 99, 101].some(function (item) {
+				return item > 10;
+			});
+			console.log(some1);
+
+			var some2 = [1, 12, 25, 42, 99, 101].some(function (item) {
+				return item > 10;
+			});
+			console.log(some2);
+
+			var some3 = [1, 1, 3, 7, 9, 10].some(function (item) {
+				return item > 10;
+			});
+			console.log(some3);
+		</script>
+	</body>
+</html>

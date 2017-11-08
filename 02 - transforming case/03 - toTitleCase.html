@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>toTitleCase()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<p>Hello, world!</p>
+
+
+		<!-- Scripts -->
+		<script>
+			// https://gist.github.com/SonyaMoisset/aa79f51d78b39639430661c03d9b1058#file-title-case-a-sentence-for-loop-wc-js
+			var toTitleCase = function (str) {
+				str = str.toLowerCase().split(' ');
+				for (var i = 0; i < str.length; i++) {
+					str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+				}
+				return str.join(' ');
+			};
+
+			// Example
+			var str = 'HeRe is a MIXED capitization StRiNg.';
+			var str = toTitleCase(str);
+			console.log(str);
+		</script>
+	</body>
+</html>
