@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Array.map()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+
+		<script>
+			/**
+			 * Double each number in an array
+			 */
+
+			var numbers = [1, 4, 9];
+			var doubles = numbers.map(function(num) {
+				return num * 2;
+			});
+
+			console.log(doubles);
+
+
+			/**
+			 * Get an array of just names
+			 */
+			var data = [
+				{
+					name: 'Kyle',
+					occupation: 'Fashion Designer'
+				},
+				{
+					name: 'Liza',
+					occupation: 'Web Developer'
+				},
+				{
+					name: 'Emily',
+					occupation: 'Web Designer'
+				},
+				{
+					name: 'Melissa',
+					occupation: 'Fashion Designer'
+				},
+				{
+					name: 'Tom',
+					occupation: 'Web Developer'
+				}
+			];
+
+			var names = data.map(function (item) {
+				return item.name;
+			});
+
+			console.log(names);
+		</script>
+	</body>
+</html>

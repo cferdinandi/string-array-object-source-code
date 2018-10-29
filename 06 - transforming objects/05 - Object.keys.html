@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Object.keys()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+
+		<script>
+			var lunch = {
+				sandwich: 'turkey',
+				chips: 'cape cod',
+				drink: 'soda'
+			};
+
+			console.log(Object.keys(lunch));
+
+			Object.keys(lunch).forEach(function (key) {
+				console.log(key); // The key
+				console.log(lunch[key]); // The value
+			});
+		</script>
+	</body>
+</html>

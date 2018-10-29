@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>replace()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+
+		<script>
+			/**
+			 * Basic String Replace
+			 */
+
+			var chips = 'I love Cape Cod potato chips!';
+			console.log(chips);
+
+			var lays = chips.replace( 'Cape Cod', 'Lays' );
+			console.log(lays);
+
+			var soda = chips.replace( 'Cape Cod potato chips', 'soda' );
+			console.log(soda);
+
+			var extend = chips.replace( 'Cape Cod', 'Cape Cod salt and vinegar' );
+			console.log(extend);
+
+
+			/**
+			 * Global Matches
+			 */
+
+			var moreChips = 'Cape Cod potato chips are my favorite brand of chips.';
+
+			// Only replaces the first instance of the word "chips"
+			var noChips = moreChips.replace('chips', 'deep fried potato slices');
+			console.log(noChips);
+
+			// Replaces all instances of the word "chips"
+			var noChipsAll = moreChips.replace(new RegExp('chips', 'g'), 'deep fried potato slices');
+			console.log(noChipsAll);
+		</script>
+	</body>
+</html>

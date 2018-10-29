@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Array.find()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+
+		<script>
+			/**
+			 * Get the first item greater than 10
+			 */
+
+			var greaterThanTen = [1, 12, 25, 42, 99, 101].find(function (item) {
+				return item > 10;
+			});
+			console.log(greaterThanTen);
+
+
+			var alsoGreaterThanTen = [1, 2, 4, 7, 8].find(function (item) {
+				return item > 10;
+			});
+			console.log(alsoGreaterThanTen);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>indexOf()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+
+		<script>
+			var str = 'I love Cape Cod potato chips.';
+
+			// Get the index
+			console.log(str.indexOf('Cape Cod'));
+			console.log(str.indexOf('Cape C'));
+			console.log(str.indexOf('cape cod'));
+
+			// Boolean test
+			if (str.indexOf('Cape Cod') > -1) {
+				console.log('It contains the string');
+			}
+		</script>
+	</body>
+</html>

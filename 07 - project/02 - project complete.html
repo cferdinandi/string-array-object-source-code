@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Project Complete</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 40em;
+				width: 88%;
+			}
+
+			h2 {
+				margin-top: 2em;
+			}
+
+			img {
+				height: auto;
+				max-width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<h1>Adoptable Dogs</h1>
+
+		<div id="dogs">Fetching our adoptable dogs...</div>
+
+
+		<!-- Scripts -->
+		<script>
+			var apiData = [
+				{
+					name: 'Rufus',
+					breeds: [
+						'Lab',
+						'German Shepard',
+						'Border Collie'
+					],
+					age: 'Adult',
+					size: 'M',
+					gender: 'M',
+					details: 'No Cats, No Dogs',
+					photo: 'img/rufus.jpg',
+					description: '      Hail-shot bounty barque  chase guns. Brigantine gibbet haul wind line.  Barque chandler lookout clap of thunder. Transom hogshead trysail league.  '
+				},
+				{
+					name: 'Kylie Jane',
+					breeds: [
+						'Shih Tzu'
+					],
+					age: 'Baby',
+					size: 'S',
+					gender: 'F',
+					details: 'Neutered',
+					photo: 'img/kylie.jpg',
+					description: '   Hands loaded to the gunwalls topgallant long clothes. Crack Jennys tea cup topsail flogging handsomely. Bounty blow the man down nipper pillage. Chantey landlubber or just lubber red ensign warp.'
+				},
+				{
+					name: 'Jacque ',
+					breeds: [
+						'Chihuahua',
+						'Rat Terrier'
+					],
+					age: 'Senior',
+					size: 'S',
+					gender: 'M',
+					details: 'No Cats, No Dogs, Neutered, Special Medical Needs',
+					photo: 'img/jacque.jpg',
+					description: 'Interloper tackle   yo-ho-ho yard. Gangway keelhaul no prey, no pay sheet. Hang the jib snow careen transom. Broadside gabion bilged on her anchor sloop.'
+				},
+				{
+					name: 'Elsa',
+					breeds: [
+						'Irish Wolfhound',
+						'Wirehaired Terrier',
+						'Staffordshire Terrier'
+					],
+					age: 'Adult',
+					size: 'XL',
+					gender: 'F',
+					details: 'Neutered',
+					photo: 'img/elsa.jpg',
+					description: 'Take a caulk league pink main sheet. Letter of Marque avast coxswain fire in the hole. Yardarm schooner piracy Jack Tar. Yardarm hardtack rutters poop deck.'
+				},
+				{
+					name: 'Colt',
+					breeds: [
+						'Staffordshire Terrier',
+						'Dalmation'
+					],
+					age: 'Baby',
+					size: 'L',
+					gender: 'M',
+					details: '',
+					photo: 'img/colt.jpg',
+					description: '     Come about Nelsons folly  black jack measured fer yer chains.  Hail-shot tack sloop grapple.  Boom sheet spirits man-of-war.  Scuttle bounty hulk sloop.'
+				}
+			];
+
+			// Create a list of other details
+			var getOtherDetails = function (dogDetails) {
+
+				// If the array is empty, return a messsage
+				if (dogDetails === '') {
+					return ' No additional details.';
+				}
+
+				// Convert the dog details string to an array,
+				// then create a list item for each detail
+				var details = dogDetails.split(', ').map(function (detail) {
+					return '<li>' + detail + '</li>';
+				});
+
+				// Convert the details array into a string and wrap in an unordered list
+				return '<ul>' + details.join('') + '</ul>';
+
+			};
+
+			// Create a list of adoptable dogs
+			var getDogs = function () {
+				// Template
+				// <h2>{Dog Name}</h2>
+				// <p><img alt="A photo of {Dog Name}" src="photo.jpg"></p>
+				//
+				// <p>
+				// 		Age: {age}<br>
+				// 		Size: {size}<br>
+				// 		Gender: {gender}<br>
+				// 		Breeds: {breed1}, {breed2}
+				// </p>
+				//
+				// <strong>Other Details:</strong>
+				// <ul>
+				// 		<li>{detail1: ex. No Cats}</li>
+				// </ul>
+				//
+				// <p>{description}</p>
+				return apiData.map(function (dog) {
+					var html =
+						'<h2>' + dog.name + '</h2>' +
+
+						'<p><img alt="A photo of ' + dog.name + '" src="' + dog.photo + '"></p>' +
+
+						'<p>' +
+							'Age: ' + dog.age.replace('Baby', 'Puppy') + '<br>' +
+							'Size: ' + dog.size.replace('S', 'Small').replace('M', 'Medium').replace('L', 'Large').replace('XL', 'Very Large') + '<br>' +
+							'Gender: ' + dog.gender.replace('M', 'Male').replace('F', 'Female') + '<br>' +
+							'Breeds: ' + dog.breeds.join(', ') +
+						'</p>' +
+
+						'<strong>Other Details:</strong>' + getOtherDetails(dog.details) +
+
+						'<p>' + dog.description.replace('  ', ' ') + '</p>';
+
+					return html;
+				}).join('');
+			};
+
+			// Get the app and generate the HTML
+			var app = document.querySelector('#dogs');
+			app.innerHTML = getDogs();
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Object.assign()</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Styles -->
+		<style type="text/css">
+			body {
+				max-width: 40em;
+				width: 88%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+
+		<script>
+			// Example objects
+			var object1 = {
+				apple: 0,
+				banana: {
+					weight: 52,
+					price: 100
+				},
+				cherry: 97
+			};
+
+			var object2 = {
+				banana: {
+					price: 200
+				},
+				durian: 100
+			};
+
+			var object3 = {
+				apple: 'yum',
+				pie: 3.214,
+				applePie: true
+			};
+
+			// Merge objects together
+			var mergedObjs = Object.assign(object1, object2, object3);
+			console.log(mergedObjs);
+		</script>
+	</body>
+</html>
